@@ -7,7 +7,7 @@ default: all
 all: calculator
 
 calculator: main.o addition.o subtraction.o multiplication.o division.o
-	$(CC) $(CFLAGS) -o calculator.o main.o addition.o subtraction.o multiplication.o division.o
+	$(CC) $(CFLAGS) -o calculator main.o addition.o subtraction.o multiplication.o division.o
 main.o: main.c operations.h
 	$(CC) $(CFLAGS) -c main.c -o main.o
 addition.o: addition.c operations.h
@@ -20,6 +20,6 @@ division.o: division.c operations.h
 	$(CC) $(CFLAGS) -c division.c -o division.o
 
 clean::
-	$(RM) addition.o subtraction.o multiplication.o division.o main.o main calculator.o calculator
+	$(RM) addition.o subtraction.o multiplication.o division.o main.o main calculator
 
 .PHONY: all clean
