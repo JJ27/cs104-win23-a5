@@ -9,7 +9,7 @@ int main(int argc, char *argv[]){
   int a;
   int b;
   char choice;
-  if (strcmp(argv[1],"-q") == 0) {
+  if (argc > 1 && strcmp(argv[1],"-q") == 0) {
     verbose = 0;
   }
   if (verbose) {
